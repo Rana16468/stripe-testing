@@ -3,16 +3,25 @@ import { initializeApp, getApps } from 'firebase/app';
 import { getMessaging, getToken } from 'firebase/messaging';
 
 // Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyAoqRRdmL9jOhDQZ5BXQkZV19lyN3-0ygQ",
-  authDomain: "moving-delivery-service.firebaseapp.com",
-  projectId: "moving-delivery-service",
-  storageBucket: "moving-delivery-service.firebasestorage.app",
-  messagingSenderId: "316749586606",
-  appId: "1:316749586606:web:505212ee54ad61b4254d3f"
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAoqRRdmL9jOhDQZ5BXQkZV19lyN3-0ygQ",
+//   authDomain: "moving-delivery-service.firebaseapp.com",
+//   projectId: "moving-delivery-service",
+//   storageBucket: "moving-delivery-service.firebasestorage.app",
+//   messagingSenderId: "316749586606",
+//   appId: "1:316749586606:web:505212ee54ad61b4254d3f"
+// };
+
+  // Initialize Firebase once
+ const firebaseConfig = {
+  apiKey: "AIzaSyD_s53MeEHU0x3XTq3SXqI0V6ngoCK4aQw",
+  authDomain: "navyboy-8e859.firebaseapp.com",
+  projectId: "navyboy-8e859",
+  storageBucket: "navyboy-8e859.firebasestorage.app",
+  messagingSenderId: "261362374086",
+  appId: "1:261362374086:web:e9a168ce0dead057db8ec7"
 };
 
-// Initialize Firebase once
 if (getApps().length === 0) {
   initializeApp(firebaseConfig);
 }
@@ -43,11 +52,14 @@ function FCMTokenComponent() {
       }
 
       const swRegistration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
-
+//moving delivery service vapidKey
+//    vapidKey: "BOd6KLslH1BoXL_5wVbCCbpvzvSC4MchG2AhAtpBLiiGXbew8JWa5iV64YiXHHa45N1xPAwwvdlu078_XaQG-dA",
       const token = await getToken(messaging, {
-        vapidKey: "BOd6KLslH1BoXL_5wVbCCbpvzvSC4MchG2AhAtpBLiiGXbew8JWa5iV64YiXHHa45N1xPAwwvdlu078_XaQG-dA",
+        vapidKey: "BMC4XzxK4FM6Eky8jELgqnJQoiAY-y0sj_0RRpnQV4yuQ8WyOVTamGkqeJHXlSzpgXY1ZgfkCGt338RE4XsnXcc",
         serviceWorkerRegistration: swRegistration
       });
+
+      console.log(token);
 
       if (token) {
         setFcmToken(token);
@@ -83,6 +95,8 @@ function FCMTokenComponent() {
       });
     }
   };
+
+  console.log(fcmToken)
 
   return (
     <div style={{ padding: 20, maxWidth: 600, margin: '0 auto' }}>
