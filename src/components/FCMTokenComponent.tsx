@@ -3,15 +3,27 @@ import { initializeApp, getApps } from 'firebase/app';
 import { getMessaging, getToken } from 'firebase/messaging';
 
 // Firebase config
-const firebaseConfig = {
-  // apiKey: "AIzaSyAoqRRdmL9jOhDQZ5BXQkZV19lyN3-0ygQ",
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAoqRRdmL9jOhDQZ5BXQkZV19lyN3-0ygQ",
+//   authDomain: "moving-delivery-service.firebaseapp.com",
+//   projectId: "moving-delivery-service",
+//   storageBucket: "moving-delivery-service.firebasestorage.app",
+//   messagingSenderId: "316749586606",
+//   appId: "1:316749586606:web:505212ee54ad61b4254d3f"
+// };
+
+  // Initialize Firebase once
+ const firebaseConfig = {
+
+
+  //   apiKey: "AIzaSyAoqRRdmL9jOhDQZ5BXQkZV19lyN3-0ygQ",
   // authDomain: "moving-delivery-service.firebaseapp.com",
   // projectId: "moving-delivery-service",
   // storageBucket: "moving-delivery-service.firebasestorage.app",
   // messagingSenderId: "316749586606",
   // appId: "1:316749586606:web:505212ee54ad61b4254d3f"
 
-    apiKey: "AIzaSyAJy5EDuKmQNCpoZnlRTAGZKsg8c1A4KNE",
+  apiKey: "AIzaSyAJy5EDuKmQNCpoZnlRTAGZKsg8c1A4KNE",
   authDomain: "moving-delivery-service-776cb.firebaseapp.com",
   projectId: "moving-delivery-service-776cb",
   storageBucket: "moving-delivery-service-776cb.firebasestorage.app",
@@ -46,7 +58,7 @@ function FCMTokenComponent() {
       setPermissionStatus(permission as NotificationPermissionStatus);
 
       if (permission !== 'granted') {
-        setError(`Notification permission ${permission}. Cannot get FCM token.`);
+        // setError(Notification permission ${permission}. Cannot get FCM token.);
         return;
       }
 
@@ -54,7 +66,7 @@ function FCMTokenComponent() {
 
       const token = await getToken(messaging, {
         // vapidKey: "BOd6KLslH1BoXL_5wVbCCbpvzvSC4MchG2AhAtpBLiiGXbew8JWa5iV64YiXHHa45N1xPAwwvdlu078_XaQG-dA",
-         vapidKey: "BDWnzAPA0ma-JHA98ZQuQ6QG-C2ILGuIgXQwEEWnyKFJvReKyekJ3ANRUKxE0wHTqMQyxY5xhMW5Q5SPxXXeyTU",
+        vapidKey: "BDWnzAPA0ma-JHA98ZQuQ6QG-C2ILGuIgXQwEEWnyKFJvReKyekJ3ANRUKxE0wHTqMQyxY5xhMW5Q5SPxXXeyTU",
         serviceWorkerRegistration: swRegistration
       });
 
@@ -68,7 +80,7 @@ function FCMTokenComponent() {
         setError('No registration token available.');
       }
     } catch (err) {
-      setError(`Error getting FCM token: ${err || 'Unknown error'}`);
+      setError(`Error getting FCM token: ${err|| 'Unknown error'}`);
       console.error(err);
     } finally {
       setLoading(false);
