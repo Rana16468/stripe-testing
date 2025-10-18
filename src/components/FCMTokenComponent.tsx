@@ -23,12 +23,19 @@ import { getMessaging, getToken } from 'firebase/messaging';
   // messagingSenderId: "316749586606",
   // appId: "1:316749586606:web:505212ee54ad61b4254d3f"
 
-  apiKey: "AIzaSyAJy5EDuKmQNCpoZnlRTAGZKsg8c1A4KNE",
-  authDomain: "moving-delivery-service-776cb.firebaseapp.com",
-  projectId: "moving-delivery-service-776cb",
-  storageBucket: "moving-delivery-service-776cb.firebasestorage.app",
-  messagingSenderId: "202081296611",
-  appId: "1:202081296611:web:b15052151b777fb6fc25d6"
+  // apiKey: "AIzaSyAJy5EDuKmQNCpoZnlRTAGZKsg8c1A4KNE",
+  // authDomain: "moving-delivery-service-776cb.firebaseapp.com",
+  // projectId: "moving-delivery-service-776cb",
+  // storageBucket: "moving-delivery-service-776cb.firebasestorage.app",
+  // messagingSenderId: "202081296611",
+  // appId: "1:202081296611:web:b15052151b777fb6fc25d6"
+
+   apiKey: "AIzaSyAN00Vtbf5f4sp-xTpDj14LLOu5_hRt6Eo",
+  authDomain: "event-managment-48b37.firebaseapp.com",
+  projectId: "event-managment-48b37",
+  storageBucket: "event-managment-48b37.firebasestorage.app",
+  messagingSenderId: "1066606126467",
+  appId: "1:1066606126467:web:c0ff8db6c2720aad4702b6"
 };
 
   
@@ -66,7 +73,8 @@ function FCMTokenComponent() {
 
       const token = await getToken(messaging, {
         // vapidKey: "BOd6KLslH1BoXL_5wVbCCbpvzvSC4MchG2AhAtpBLiiGXbew8JWa5iV64YiXHHa45N1xPAwwvdlu078_XaQG-dA",
-        vapidKey: "BDWnzAPA0ma-JHA98ZQuQ6QG-C2ILGuIgXQwEEWnyKFJvReKyekJ3ANRUKxE0wHTqMQyxY5xhMW5Q5SPxXXeyTU",
+        // vapidKey: "BDWnzAPA0ma-JHA98ZQuQ6QG-C2ILGuIgXQwEEWnyKFJvReKyekJ3ANRUKxE0wHTqMQyxY5xhMW5Q5SPxXXeyTU",
+        vapidKey:"BKT3f9wNUjiZxQCaq8f13b0HR1r97uI6tgwLuVaG7lzbrC-hUs011j1SL0PsI62olEOpQ7D3QqqYUqvFfnR8JNc",
         serviceWorkerRegistration: swRegistration
       });
 

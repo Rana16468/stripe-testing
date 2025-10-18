@@ -11,6 +11,9 @@ import FCMTokenComponent from "./components/FCMTokenComponent";
 
 import ProductList from "./components/stripe/ProductList";
 import NashaInfo from "./components/NashaInfo/NashaInfo";
+import MyCurrentLocation from "./components/NashaInfo/MyCurrentLocation";
+
+
 // Replace with your publishable key
 const stripePromise = loadStripe(
   "pk_test_51RGpZ62KDeWV62owfMrtqMSMj1HATiK0cSAqMGvmuBIrXc8lUOpjdVM7QEN67TfUmDmu7eAjheQCeLDiZraduaAX00XjM5SYOB"
@@ -35,7 +38,8 @@ const App: React.FC = () => {
             <Route path="/map_location" element={<ReverseGeocode />} />
             <Route path="/fcm" element={<FCMTokenComponent />} />
             <Route path="/payment_from" element={<ProductList />} />,
-            <Route path="/nasha" element={<NashaInfo />} />
+            <Route path="/nasha" element={<NashaInfo />} />,
+            <Route path="/mylocation" element={< MyCurrentLocation/>}></Route>
           </Routes>
         </div>
       </div>
